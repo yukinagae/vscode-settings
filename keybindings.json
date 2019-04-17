@@ -1,0 +1,91 @@
+// Place your key bindings in this file to override the defaults
+[
+    // コードジャンプ系
+    {
+        "key": "ctrl+u ctrl+d",
+        "command": "editor.action.goToDeclaration",
+        "when": "editorFocus"
+    },
+    // grep検索
+    {
+        "key": "ctrl+u ctrl+g",
+        "command": "workbench.action.findInFiles",
+        "when": "!searchInputBoxFocus"
+    },
+    // エディターとエディターの移動
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.previousEditor",
+        "when": "editorFocus"
+    },
+    // editorからsidebarの移動
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.focusSideBar",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.navigateEditorGroups",
+        "when": "!editorFocus"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.focusFirstEditorGroup",
+        "when": "!editorFocus"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.nextEditor",
+        "when": "editorFocus && vim.mode == 'Normal'"
+    },
+    // エディターfile検索 以下のコマンドはfile mruと同等の機能が表示される
+    {
+        "key": "ctrl+u ctrl+u",
+        "command": "workbench.action.quickOpen"
+    },
+    //　カーソル移動
+    // editorのテキストにfocusしている時のコマンドinsert modeでctrl + lを押すとcursorが移動します
+    {
+        "key": "ctrl+l",
+        "command": "cursorRight",
+        "when": "editorTextFocus && !editorReadOnly"
+    },
+    // エクスプローラーのトグル
+    {
+        "key": "ctrl+v",
+        "command": "workbench.view.explorer",
+        "when": "!explorerViewletVisible && vim.mode != 'SearchInProgressMode' && vim.mode != 'Insert'"
+    },
+    {
+        "key": "ctrl+v",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "explorerViewletVisible && !searchViewletVisible && !inDebugMode && vim.mode != 'SearchInProgressMode' && vim.mode != 'Insert'"
+    },
+    // ターミナルのトグル
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "!terminalFocus && vim.mode != 'SearchInProgressMode' && vim.mode != 'Insert'"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "terminalFocus && vim.mode != 'SearchInProgressMode' && vim.mode != 'Insert'"
+    },
+    {
+        "key": "cmd+enter",
+        "command": "renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus"
+    },
+    {
+        "key": "enter",
+        "command": "-renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus"
+    },
+    {
+        "key": "enter",
+        "command": "list.select",
+        "when": "listFocus && !inputFocus"
+    }
+]
